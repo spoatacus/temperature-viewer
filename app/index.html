@@ -1,0 +1,70 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Weather Viewer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- build:css styles/styles.css -->
+        <link rel="stylesheet" href="bower_components/rickshaw/rickshaw.css">
+        <!-- endbuild -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="#">Weather Viewer</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" role="main">
+
+            <div class="latest">
+                <p>Temp: <span id="latest-temp" class="badge"></span></p>
+                <p>Humidity: <span id="latest-humidity" class="badge"></span></p>
+                <p id="latest-timestamp" class="small"></p>
+            </div>
+
+            <div id="chart_temperature" style="width: 100%;"></div>
+
+        </div>
+
+
+        <!-- build:js scripts/components.js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/d3/d3.js"></script>
+        <!-- endbuild -->
+
+        <script src="bower_components/rickshaw/rickshaw.min.js"></script>
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/sass-bootstrap/js/bootstrap-affix.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-alert.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-dropdown.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-tooltip.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-modal.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-transition.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-button.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-popover.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-typeahead.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-carousel.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-scrollspy.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="bower_components/sass-bootstrap/js/bootstrap-tab.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
