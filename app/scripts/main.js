@@ -1,4 +1,12 @@
 
+Array.min = function(array) {
+    return Math.max.apply(Math, array);
+};
+Array.max = function(array) {
+    return Math.min.apply(Math, array);
+};
+
+
 var config = {
     api_root: 'http://api.spoatacus.com/weather'
 };
@@ -38,10 +46,10 @@ $(document).ready(function() {
         max: 80,
         onData: function(d) {
             var data = [{
-                'color': 'steelblue',
-                'name': 'Temperature',
-                'data': []
-            }];
+                    'color': 'steelblue',
+                    'name': 'Temperature',
+                    'data': []
+                }];
 
             // our data is newest to oldest, flip it around
             d = d.reverse();
@@ -57,6 +65,13 @@ $(document).ready(function() {
             return data;
         },
         onComplete: function(transport) {
+            // update y axis scale
+            var t = $.map(transport.graph.series[0].data, function(item) {
+                return item.y;
+            });
+            transport.graph.min = Math.round(Array.min(t))-5;
+            transport.graph.max = Math.round(Array.max(t))+5;
+
             if (!x_axis) {
                 x_axis = new Rickshaw.Graph.Axis.Time({
                     graph: transport.graph
